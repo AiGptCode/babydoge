@@ -141,8 +141,8 @@ html {
 }
 
 body {
-  background-color: var(--white);
-  color: var(--black-coral);
+  background-color: var(--black);
+  color: var(--white-coral);
   font-size: 1.6rem;
   line-height: 1.7;
 }
@@ -259,7 +259,7 @@ body.nav-active { overflow: hidden; }
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--white);
+  background-color: var(--black);
   width: 100%;
   padding-block: 20px;
   box-shadow: var(--shadow-1);
@@ -318,8 +318,8 @@ body.nav-active { overflow: hidden; }
 }
 
 .nav-close-btn {
-  background-color: var(--white_a8);
-  color: var(--white);
+  background-color: var(--black_a8);
+  color: var(--black);
   font-size: 2rem;
   padding: 6px;
   border-radius: var(--radius-circle);
@@ -529,8 +529,8 @@ body.nav-active { overflow: hidden; }
 .contact .section-title { margin-block-start: 20px; }
 
 .input-field {
-  background-color: var(--white);
-  color: var(--black-coral);
+  background-color: var(--black);
+  color: var(--white-coral);
   font-size: var(--fs-7);
   padding: 14px 18px;
   border-radius: var(--radius-6);
