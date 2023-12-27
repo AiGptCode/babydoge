@@ -23,7 +23,7 @@
 body {
   --black: hsla(0, 0%, 100%, 1);
   --black_a8: hsla(0, 0%, 100%, 0.08);
-  --white_a12: hsla(0, 0%, 100%, 0.12);
+  --black_a12: hsla(0, 0%, 100%, 0.12);
   --cultured: hsla(220, 20%, 97%, 1);
   --snow: hsla(345, 57%, 97%, 1);
   --manatee: hsla(219, 10%, 62%, 1);
