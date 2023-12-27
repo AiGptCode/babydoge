@@ -35,7 +35,7 @@ body {
   --gunmetal: hsla(214, 15%, 21%, 1);
   --charcoal: hsla(219, 22%, 26%, 1);
 
-  background-color: var(--black-coral); /* Set background color to a dark shade */
+  background-color: var(--raisin-black); /* Set background color to black */
   color: var(--snow); /* Set text color to a light shade */
 }
 
