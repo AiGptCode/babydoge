@@ -1,214 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
+
+
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>World Trade Clocks & Crypto Prices</title>
-<!-- Add Bootstrap CSS and JS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L\_dstPt3HV5HzF6Gvk/e3s4Wz6iJgD/+ub2oU" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBud7TlRbs/ic4AwGcFZOxg5DpPt8EgeUIgIwzjWfXQKWA3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            text-align: center;
+        }
+  
+        h1 {
+            color: orange;
+        }
+    </style>
+</head>
 <style>
-body {
-/* Use Bootstrap variables for better harmony with other components */
-background-color: var(--bs-gray-900);
-color: var(--bs-gray-100);
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 20px;
-}
-.box {
-/* Use Bootstrap variables for better harmony with other components */
-background-color: var(--bs-white);
-border-radius: var(--bs-border-radius-lg);
-box-shadow: var(--bs-box-shadow);
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-align-items: center;
-font-size: 1.2em;
-padding: 20px;
-transition: all 0.3s ease;
-}
-.box:hover {
-transform: translateY(-5px);
-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-.crypto-price {
-background-color: var(--bs-gray-800);
-color: var(--bs-gray-100);
-border-radius: var(--bs-border-radius-lg);
-padding: 20px;
-margin-top: 20px;
-}
-.crypto-price h3 {
-margin-bottom: 20px;
-}
-.crypto-price table {
-width: 100%;
-border-collapse: collapse;
-}
-.crypto-price th,
-.crypto-price td {
-padding: 10px;
-text-align: left;
-border-bottom: 1px solid var(--bs-gray-600);
-}
-.crypto-price th {
-font-weight: normal;
-color: var(--bs-gray-500);
-}
-/* Add custom styles for flags and country names */
-.flag-icon {
-height: 30px;
-width: auto;
-margin-right: 10px;
-}
-.country-name {
-font-size: 1.5em;
-font-weight: bold;
+h1 {
+  text-shadow: 2px 2px #ff7b00;
 }
 </style>
 </head>
 <body>
-<div class="container">
-<h1 class="text-center my-5">World Trade Clocks & Crypto Prices</h1>
-<div class="row">
-<div class="col-md-6">
-<!-- Stock Exchange Clocks -->
-<div class="row">
-<div class="col-md-6">
-<div class="box" style="background-color: #ff8080; color: #fff;">
-<div class="d-flex justify-content-center align-items-center">
-<img src="https://flagcdn.com/gb.svg" class="flag-icon" alt="United Kingdom Flag">
-<span class="country-name">London</span>
+<div align="center">
+<h1>BABYDOGEPERSIAN</h1>
 </div>
-<p class="card-text" id="londonTime"></p>
-</div>
-<!-- Add more clock boxes here -->
-<div class="box" style="background-color: #80bfff; color: #fff;">
-<div class="d-flex justify-content-center align-items-center">
-<img src="https://flagcdn.com/us.svg" class="flag-icon" alt="United States Flag">
-<span class="country-name">New York</span>
-</div>
-<p class="card-text" id="newYorkTime"></p>
-</div>
-<div class="box" style="background-color: #ffc266; color: #fff;">
-<div class="d-flex justify-content-center align-items-center">
-<img src="https://flagcdn.com/jp.svg" class="flag-icon" alt="Japan Flag">
-<span class="country-name">Tokyo</span>
-</div>
-<p class="card-text" id="tokyoTime"></p>
-</div>
-<div class="box" style="background-color: #b3ffb3; color: #fff;">
-<div class="d-flex justify-content-center align-items-center">
-<img src="https://flagcdn.com/de.svg" class="flag-icon" alt="Germany Flag">
-<span class="country-name">Frankfurt</span>
-</div>
-<p class="card-text" id="frankfurtTime"></p>
-</div>
-<div class="box" style="background-color: #ff8080; color: #fff;">
-<div class="d-flex justify-content-center align-items-center">
-<img src="https://flagcdn.com/au.svg" class="flag-icon" alt="Australia Flag">
-<span class="country-name">Sydney</span>
-</div>
-<p class="card-text" id="sydneyTime"></p>
-</div>
-<div class="box" style="background-color: #80bfff; color: #fff;">
-<div class="d-flex justify-content-center align-items-center">
-<img src="https://flagcdn.com/in.svg" class="flag-icon" alt="India Flag">
-<span class="country-name">Mumbai</span>
-</div>
-<p class="card-text" id="mumbaiTime"></p>
-</div>
-<div class="box" style="background-color: #ffc266; color: #fff;">
-<div class="d-flex justify-content-center align-items-center">
-<img src="https://flagcdn.com/cn.svg" class="flag-icon" alt="China Flag">
-<span class="country-name">Shanghai</span>
-</div>
-<p class="card-text" id="shanghaiTime"></p>
-</div>
-<div class="box" style="background-color: #b3ffb3; color: #fff;">
-<div class="d-flex justify-content-center align-items-center">
-<img src="https://flagcdn.com/hk.svg" class="flag-icon" alt="Hong Kong Flag">
-<span class="country-name">Hong Kong</span>
-</div>
-<p class="card-text" id="hongKongTime"></p>
-</div>
-<div class="box" style="background-color: #ff8080; color: #fff;">
-<div class="d-flex justify-content-center align-items-center">
-<img src="https://flagcdn.com/ca.svg" class="flag-icon" alt="Canada Flag">
-<span class="country-name">Toronto</span>
-</div>
-<p class="card-text" id="torontoTime"></p>
-</div>
-<div class="box" style="background-color: #80bfff; color: #fff;">
-<div class="d-flex justify-content-center align-items-center">
-<img src="https://flagcdn.com/sg.svg" class="flag-icon" alt="Singapore Flag">
-<span class="country-name">Singapore</span>
-</div>
-<p class="card-text" id="singaporeTime"></p>
-</div>
-</div>
-<!-- Add more columns for more clocks -->
-</div>
-</div>
-<div class="col-md-6">
-<!-- Crypto Prices -->
-<div class="crypto-price">
-<h3>Top 20 Crypto Prices</h3>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>Crypto</th>
-<th>Price</th>
-</tr>
-</thead>
-<tbody id="cryptoTable">
-<!-- Crypto prices will be added here by JavaScript -->
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<!-- Add JavaScript for stock exchange clocks and crypto prices -->
-<script>
-async function updateCryptoPrices() {
-const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs\_currency=usd&order=market\_cap\_desc&per\_page=20&page=1');
-const data = await response.json();
-const cryptoTable = document.getElementById('cryptoTable');
-cryptoTable.innerHTML = '';
-data.forEach((coin, index) => {
-const row = document.createElement('tr');
-row.innerHTML = `
-<td>${index + 1}</td>
-<td>${coin.name}</td>
-<td>$${coin.current\_price.toFixed(2)}</td>
-`;
-cryptoTable.appendChild(row);
-});
-}
-function updateTime(elementId, offset) {
-const now = new Date();
-const utc = now.getTime() + (now.getTimezoneOffset() \* 60000);
-const time = new Date(utc + (3600000 \* offset));
-document.getElementById(elementId).innerText = time.toLocaleTimeString();
-}
-setInterval(() => {
-updateTime('londonTime', 0);
-updateTime('newYorkTime', -5);
-updateTime('tokyoTime', 9);
-updateTime('frankfurtTime', 1);
-updateTime('sydneyTime', 10);
-updateTime('mumbaiTime', 5.5);
-updateTime('shanghaiTime', 8);
-updateTime('hongKongTime', 8);
-updateTime('torontoTime', -5);
-updateTime('singaporeTime', 8);
-updateCryptoPrices();
-}, 1000);
-</script>
 </body>
 </html>
+
+ <body style="background-color: #000000;">
+ 
+
+
+
+
+<script async src="https://static.coinstats.app/widgets/coin-list-widget.js"></script>
+<coin-stats-list-widget locale="en" currency="USD" bg-color="#1C1B1B" status-up-color="#74D492" status-down-color="#FE4747" text-color="#FFFFFF" font="Roboto, Arial, Helvetica" border-color="rgba(255,255,255,0.15)" width="486" coin-ids="bitcoin,baby-doge-coin,ethereum,binance-coin,dogecoin"></coin-stats-list-widget>
+
+
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+	<div class="tradingview-widget-container__widget"></div>
+	<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+	<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+	{
+	"symbols": [
+	  {
+		"proName": "BINANCE:BTCUSDT",
+		"title": "Bitcoin"
+	  },
+	  {
+		"description": "babydoge",
+		"proName": "OKX:BABYDOGEUSDT"
+	  }
+	],
+	"colorTheme": "red",
+	"isTransparent": false,
+	"showSymbolLogo": true,
+	"locale": "en"
+  }
+	</script>
+  </div>
+  <!-- TradingView Widget END -->
+
+
+ 
+	<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	</head>
+	<body>
+	<!-- COPY QC WIDGET TAG AND SCRIPT BELOW -->
+	<qc-trend
+	coin-name="btc"
+	background="#1E1E1E"
+	theme="dark"
+	currency-code="USD"
+	width="100%"
+	height="185px"></qc-trend>
+	<script src="https://quantifycrypto.com/widgets/trend/js/qc-trend-widget.js"></script>
+	</body>
+	</html>
+
+	
+	<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	</head>
+	<body>
+	<!-- COPY QC WIDGET TAG AND SCRIPT BELOW -->
+	<qc-trend
+	coin-name="babydoge"
+	background="#1E1E1E"
+	theme="dark"
+	currency-code="USD"
+	width="100%"
+	height="185px"></qc-trend>
+	<script src="https://quantifycrypto.com/widgets/trend/js/qc-trend-widget.js"></script>
+	</body>
+	</html>
+
+
+<div style="height:100px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 6px solid #282E3B; border-radius: 5p; text-align: right; line-height:14px; block-size:62px; font-size: 18px; font-feature-settings: normal; text-size-adjust: 50%; box-shadow: inset 0 -20px 0 0 #1D2330;padding:1px;padding: 0px; margin: 0px; width: 100%;"><div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover=no" width="100%" height="48px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #626B7F; line-height: 18px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="" target="_blank"></div></div>
+
+
+
+
+
+<script async src="https://static.coinstats.app/widgets/coin-chart-widget.js"></script>
+<coin-stats-chart-widget type="large" coin-id="baby-doge-coin" width="650" chart-height="300" currency="USD" locale="en" bg-color="#1C1B1B" text-color="#FFFFFF" status-up-color="#74D492" status-down-color="#FE4747" buttons-color="#1C1B1B" chart-color="#FFA959" chart-gradient-from="rgba(255,255,255,0.07)" chart-gradient-to="rgba(0,0,0,0)" chart-label-background="#000000" candle-grids-color="rgba(255,255,255,0.1)" border-color="rgba(255,255,255,0.15)" font="Roboto, Arial, Helvetica" btc-color="#6DD400" eth-color="#67B5FF"></coin-stats-chart-widget>
+
+
+<script async src="https://static.coinstats.app/widgets/coin-chart-widget.js"></script>
+<coin-stats-chart-widget type="large" coin-id="bitcoin" width="650" chart-height="300" currency="USD" locale="en" bg-color="#1C1B1B" text-color="#FFFFFF" status-up-color="#74D492" status-down-color="#FE4747" buttons-color="#1C1B1B" chart-color="#FFA959" chart-gradient-from="rgba(255,255,255,0.07)" chart-gradient-to="rgba(0,0,0,0)" chart-label-background="#000000" candle-grids-color="rgba(255,255,255,0.1)" border-color="rgba(255,255,255,0.15)" font="Roboto, Arial, Helvetica" btc-color="#6DD400" eth-color="#67B5FF"></coin-stats-chart-widget> 
+
+<br>
+        
+<Html>     
+<Body>   
+<img src="https://cryptologos.cc/logos/baby-doge-coin-babydoge-logo.png" width="100" height="100">
+</Body>  
+</Html>  
+
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BABYDOGEUSDT/?exchange=OKX" rel="noopener" target="_blank"><span class="blue-text"> </span></a>  </div>
+  <div id="tradingview_059c1"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+  {
+  "width": 420,
+  "height": 500,
+  "symbol": "OKX:BABYDOGEUSDT",
+  "interval": "240",
+  "timezone": "Etc/UTC",
+  "theme": "dark",
+  "style": "8",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "save_image": false,
+  "studies": [
+    "ACCD@tv-basicstudies",
+    "BB@tv-basicstudies",
+    "Volume@tv-basicstudies"
+  ],
+  "container_id": "tradingview_059c1"
+}
+  );
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+        
+<Html>     
+<Body>   
+<img src="https://cdn.cdnlogo.com/logos/b/25/bitcoin.svg" width="300" height="100">
+</Body>  
+</Html>  
+
+  
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank"><span class="blue-text"></span></a> </div>
+  <div id="tradingview_6561f"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+  {
+    "width": 420,
+  "height": 500,
+  "symbol": "BINANCE:BTCUSDT",
+  "interval": "240",
+  "timezone": "Etc/UTC",
+  "theme": "dark",
+  "style": "8",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "save_image": false,
+  "studies": [
+    "BB@tv-basicstudies",
+    "MACD@tv-basicstudies",
+    "MAExp@tv-basicstudies",
+    "StochasticRSI@tv-basicstudies"
+  ],
+  "container_id": "tradingview_6561f"
+}
+  );
+  </script>
+   </div>
+<!-- TradingView Widget END -->
+
+
+
+
+	<html>
+	<head>
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	</head>
+	<body>
+	<!-- COPY QC WIDGET TAG AND SCRIPT BELOW -->
+	<qc-heatmap height="425px" num-of-coins="100" currency-code="USD"></qc-heatmap>
+	<script src="https://quantifycrypto.com/widgets/heatmaps/js/qc-heatmap-widget.js"></script>
+	</body>
+	</html>
+
+
+<Html>     
+<Body>   
+<img src="https://www.ledger.com/wp-content/uploads/2022/11/cover-33.png" width="300" height="150">
+</Body>  
+</Html>  
+
+
+ <div id="fear_and_greed" style="width:102%">
+	<a href="https://www.lookintobitcoin.com/charts/bitcoin-fear-and-greed-index/" target="_blank">
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<div id="header"></div>
+	<div id="plotly_app"></div></a>
+	<script type="text/javascript" src="https://www.lookintobitcoin.com/widget/fear-and-greed/"></script>
+  </div>
+  
+
+
+
+    
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+<!-- COPY QC WIDGET TAG AND SCRIPT BELOW -->
+<qc-grid-widget theme="dark" width="425px" ranking-type="winners_and_losers" currency-code="USD"></qc-grid-widget>
+<script src="https://quantifycrypto.com/widgets/grid/js/qc-grid-widget.js"></script>
+</body>
+</html>
+
+  
+
+
+
+<!-- Cryptocurrency Price Widget --><script>!function(){var e=document.getElementsByTagName("script"),t=e[e.length-1],n=document.createElement("script");function r(){var e=crCryptocoinPriceWidget.init({base:"USD,IRR",items:"BTC,ETH,BNB,DOGE",backgroundColor:"222222",streaming:"1",rounded:"1",boxShadow:"1",border:"1"});t.parentNode.insertBefore(e,t)}n.src="https://co-in.io/widget/pricelist.js?items=BTC%2CETH%2CBNB%2CDOGE",n.async=!0,n.readyState?n.onreadystatechange=function(){"loaded"!=n.readyState&&"complete"!=n.readyState||(n.onreadystatechange=null,r())}:n.onload=function(){r()},t.parentNode.insertBefore(n,null)}();</script><a href="https://currencyrate.today/" rel="noopener" target="_blank"></a><!-- /Cryptocurrency Price Widget -->
+
+
+
+
+ <!-- TradingView Widget BEGIN -->
+ <div class="tradingview-widget-container">
+	<div class="tradingview-widget-container__widget"></div>
+	<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSDT/technicals/" rel="noopener" target="_blank">
+	<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+	{
+	"interval": "4h",
+	"width": 425,
+	"isTransparent": false,
+	"height": 450,
+	"symbol": "BINANCE:BTCUSDT",
+	"showIntervalTabs": true,
+	"locale": "en",
+	"colorTheme": "dark"
+  }
+	</script>
+  </div>
+  <!-- TradingView Widget END -->
+
+
+
+
+
+ <!-- TradingView Widget BEGIN -->
+ <div class="tradingview-widget-container">
+	<div class="tradingview-widget-container__widget"></div>
+	<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BABYDOGEUSDT/?exchange=OKX" rel="noopener" target="_blank">
+	<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+	{
+	"interval": "4h",
+	"width": 425,
+	"isTransparent": false,
+	"height": 450,
+	"symbol": "OKX:BABYDOGEUSDT",
+	"showIntervalTabs": true,
+	"locale": "en",
+	"colorTheme": "dark"
+  }
+	</script>
+  </div>
+  <!-- TradingView Widget END -->
+
+
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title></title> 
+<style>
+body {
+  text-align: center;
+}
+
+h1 {
+	font-weight: bold;
+	text-align: center;
+}
+</style>
+</head> 
+<body> 
+
+<h3>
+
+<b style="background-color:black; color:red;"> مقایسه بازار بیت کوین با تسلا ، اپل ، اس پی ۵۰۰ ، دی جی ای</b>
+
+</body> 
+</html>
+
+<div id="chart-container" style="width:100%"> 
+	<h4> Percentage Gain / Loss </h4>
+	<a href="https://www.lookintobitcoin.com/bitcoin-price-live/" target="_blank">
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<div id="stocks-and-indices-chart"></div></a>
+	<script type="text/javascript" src="https://www.lookintobitcoin.com/widget/stocks-and-indices/1y"></script>
+  </div>
+  
+
+
+  <iframe src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&features=datepicker,timezone&countries=25,32,6,37,72,22,17,39,14,10,35,43,56,36,110,11,26,12,4,5&calType=week&timeZone=19&lang=1" width="425" height="510" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="" style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 11px;color: #333333;text-decoration: none;"> <a href="https://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link"></a>.</span></div>
+
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+  {
+  "width": "425",
+  "height": "510",
+  "defaultColumn": "overview",
+  "screener_type": "crypto_mkt",
+  "displayCurrency": "USD",
+  "colorTheme": "dark",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+
+
+
+<div style="width: 425px; height:420px; background-color: #232937; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:350px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -5px 0 0 #262B38;margin: 0;width:425px;padding:1px;padding: 0px; margin: 0px;"><div style="height:425px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=converter&theme=dark" width="425" height="400px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #626B7F; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; color: #626B7F; text-decoration:none; font-size:11px">Cryptocurrency Prices</a>&nbsp;</div></div>
+
+
+
+ 
+</head>
+
+<body>
+
+  
+
+ <h1>Contact: iranbabydogecoin.t.me</h1> 
+
+<p><strong><em><u><a href="iranbabydogecoin.t.me"> iranbabydogecoin.t.me</a></u></em></strong></p>. 
+
+
+</body>
+</html> 
