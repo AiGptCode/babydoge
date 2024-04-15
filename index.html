@@ -35,24 +35,35 @@
             transform: translateY(-5px);
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
         }
-        input[type="text"] {
-            width: 100%;
+        .comment-box {
+            background-color: #000;
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .comment-input {
+            width: calc(100% - 120px);
             padding: 10px;
             font-size: 1.2em;
             margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-        }
-        textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            resize: none;
-            background-color: #000;
+            background-color: #333;
             color: #fff;
+        }
+        .comment-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+        .comment-btn:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -96,7 +107,11 @@
         </div>
     </div>
     
-    <textarea rows="4" placeholder="Write your opinion here..."></textarea>
+    <div class="comment-box">
+        <textarea class="comment-input" rows="4" placeholder="Write your opinion here..."></textarea>
+        <button class="comment-btn" onclick="submitComment()">Submit</button>
+        <button class="comment-btn" onclick="showOldMessages()">Show Old Messages</button>
+    </div>
 
     <script>
         function updateTime(elementId, offset) {
@@ -125,6 +140,19 @@
         setInterval(() => {
             updateTime('cryptoTime', 0);
         }, 1000);
+
+        function submitComment() {
+            const comment = document.querySelector('.comment-input').value;
+            // You can send the comment to the server or process it further here
+            console.log('New comment:', comment);
+            // Clear the input field after submitting
+            document.querySelector('.comment-input').value = '';
+        }
+
+        function showOldMessages() {
+            // Functionality to retrieve and display old messages can be implemented here
+            console.log('Showing old messages...');
+        }
     </script>
 </body>
 </html>
