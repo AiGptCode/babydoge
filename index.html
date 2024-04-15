@@ -51,6 +51,8 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             resize: none;
+            background-color: #000;
+            color: #fff;
         }
     </style>
 </head>
@@ -74,10 +76,27 @@
             <p>Important Crypto Trading Time</p>
             <p id="cryptoTime"></p>
         </div>
+
+        <!-- Additional Boxes -->
+        <div class="box" style="background-color: #ff8080; color: #fff;">
+            <p>Frankfurt Stock Exchange Time</p>
+            <p id="frankfurtTime"></p>
+        </div>
+        <div class="box" style="background-color: #80bfff; color: #fff;">
+            <p>Sydney Stock Exchange Time</p>
+            <p id="sydneyTime"></p>
+        </div>
+        <div class="box" style="background-color: #ffc266; color: #fff;">
+            <p>Mumbai Stock Exchange Time</p>
+            <p id="mumbaiTime"></p>
+        </div>
+        <div class="box" style="background-color: #b3ffb3;">
+            <p>Shanghai Stock Exchange Time</p>
+            <p id="shanghaiTime"></p>
+        </div>
     </div>
     
-    <input type="text" placeholder="Enter your message">
-    <textarea rows="4" placeholder="Enter your text"></textarea>
+    <textarea rows="4" placeholder="Write your opinion here..."></textarea>
 
     <script>
         function updateTime(elementId, offset) {
@@ -91,6 +110,10 @@
             updateTime('londonTime', 0);
             updateTime('newYorkTime', -5);
             updateTime('tokyoTime', 9);
+            updateTime('frankfurtTime', 1);
+            updateTime('sydneyTime', 10);
+            updateTime('mumbaiTime', 5.5);
+            updateTime('shanghaiTime', 8);
         }, 1000);
 
         // Crypto Important Time (random time for demonstration)
